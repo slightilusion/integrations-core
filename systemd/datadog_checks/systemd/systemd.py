@@ -58,16 +58,41 @@ class SystemdCheck(AgentCheck):
             # find out which units have changed state, units that can no longer be found or units found
             changed_units, created_units, deleted_units = self.list_status_change(current_unit_status)
 
+
+
+
+
+
+
+
+
+        # SERVICE CHECKS
+        #   systemd.unit.active
         for unit in self.units_watched:
             self.send_service_checks(unit, self.get_state_single_unit(unit), self.tags)
 
+
+
+        # EVENTS
+        #   unit.status.changed
+        #   unit.status.deleted
+        #   unit.status.created
         self.report_changed_units(changed_units, self.tags)
         self.report_deleted_units(deleted_units, self.tags)
         self.report_created_units(created_units, self.tags)
 
+
+
+
+        # METRICS CHECKS
+        #   systemd.units.active
+        #   systemd.units.inactive
         if self.report_status:
             all_units = self.get_all_unit_status()
+
             self.report_statuses(all_units, self.tags)
+
+
 
         # we update the cache at the end of the check run
         self.unit_cache = current_unit_status
