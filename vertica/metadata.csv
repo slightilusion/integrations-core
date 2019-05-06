@@ -1,0 +1,10 @@
+metric_name,metric_type,interval,unit_name,per_unit_name,description,orientation,integration,short_name
+vertica.license.expiration,gauge,,second,,The time until license expiration.,1,vertica,
+vertica.license.latest_audit,gauge,,second,,The time elapsed since the latest license audit was triggered.,-1,vertica,
+vertica.license.size,gauge,,byte,,The total size of the license in bytes.,0,vertica,
+vertica.license.usable,gauge,,byte,,The total usable size of the license in bytes.,1,vertica,
+vertica.license.used,gauge,,byte,,The total used size of the license in bytes.,-1,vertica,
+vertica.license.utilized,gauge,,percent,,The utilization of the license as a percentage.,-1,vertica,
+vertica.nodes.allowed,gauge,,node,,The number of nodes permitted for use by the license.,0,vertica,
+vertica.nodes.available,gauge,,node,,The number of available nodes remaining based on the license limit.,1,vertica,
+vertica.nodes.used,gauge,,node,,The number of nodes currently in use.,-1,vertica,

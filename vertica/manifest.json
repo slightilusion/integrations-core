@@ -1,0 +1,24 @@
+{
+  "display_name": "Vertica",
+  "maintainer": "help@datadoghq.com",
+  "manifest_version": "1.0.0",
+  "name": "vertica",
+  "metric_prefix": "vertica.",
+  "metric_to_check": "",
+  "creates_events": false,
+  "short_description": "",
+  "guid": "884d1895-6791-487c-ac8e-7ccaad45db0b",
+  "support": "core",
+  "supported_os": [
+    "linux",
+    "mac_os",
+    "windows"
+  ],
+  "public_title": "Datadog-Vertica Integration",
+  "categories": [
+    ""
+  ],
+  "type": "check",
+  "is_public": false,
+  "integration_id": "vertica"
+}
